@@ -1,0 +1,29 @@
+{
+  "name": "@julyskies/scryptwrap",
+  "description": "A wrapper for the crypto.scrypt()",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": {
+    "email": "peter.dyumin@gmail.com",
+    "name": "Peter Dyumin",
+    "url": "https://github.com/peterdee"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "~14.15.1",
+    "npm": "~6.14.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julyskies/scyptwrap"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/julyskies"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

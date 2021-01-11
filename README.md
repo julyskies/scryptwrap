@@ -45,6 +45,12 @@ npm run test
 
 Tests are done with [Jest](https://jestjs.io)
 
+### Linting
+
+```shell script
+npm run lint
+```
+
 ### License
 
 [MIT](./LICENSE)

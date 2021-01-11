@@ -48,11 +48,11 @@ describe(
     );
 
     it(
-      'It should throw an error if hash string is invalid (delimiter is missing)',
+      'It should throw an error if hash string is invalid (hash length is not equal to 160)',
       async () => {
         try {
           const hashString = await hash(TEST_STRING);
-          const invalidHash = hashString.split('%').join('');
+          const invalidHash = hashString.substr(0, 150);
           await compare(invalidHash, TEST_STRING);
         } catch (error) {
           expect(error.message).toBe('Hash string is invalid!');

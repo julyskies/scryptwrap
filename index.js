@@ -1,5 +1,3 @@
-'use strict';
-
 const { promisify } = require('util');
 const {
   randomBytes,
@@ -9,7 +7,6 @@ const {
 
 const scryptPromise = promisify(scrypt);
 
-const DELIMETER = '%';
 const HASH_LENGTH = 64;
 const SALT_LENGTH = 16;
 
@@ -17,24 +14,22 @@ const SALT_LENGTH = 16;
  * Compare hash with plaintext value
  * @param {string} hash - Hash string
  * @param {string} plaintext - Plaintext string for comparison
- * @returns {Promise<boolean|Error>} 
+ * @returns {Promise<boolean|Error>}
  */
-async function compare(hash, plaintext) {
-  if (!(hash && plaintext)) {
+async function compare(hashed, plaintext) {
+  if (!(hashed && plaintext)) {
     throw new Error('Hash and plaintext strings are required!');
   }
 
-  const [saltHEX = '', hashHEX = ''] = hash.split(DELIMETER);
-  if (!(hashHEX && saltHEX)) {
+  if (hashed.length !== 160) {
     throw new Error('Hash string is invalid!');
   }
 
-  try {
-    const hashToCompare = await scryptPromise(plaintext, saltHEX, HASH_LENGTH);
-    return timingSafeEqual(Buffer.from(hashHEX, 'hex'), hashToCompare);
-  } catch (error) {
-    throw error;
-  }
+  const hashHEX = hashed.substr(32);
+  const saltHEX = hashed.substr(0, 32);
+
+  const hashToCompare = await scryptPromise(plaintext, saltHEX, HASH_LENGTH);
+  return timingSafeEqual(Buffer.from(hashHEX, 'hex'), hashToCompare);
 }
 
 /**
@@ -47,13 +42,9 @@ async function hash(string) {
     throw new Error('Hash string is empty!');
   }
 
-  try {
-    const salt = randomBytes(SALT_LENGTH).toString('hex');
-    const hash = await scryptPromise(string, salt, HASH_LENGTH);
-    return `${salt}${DELIMETER}${hash.toString('hex')}`;
-  } catch (error) {
-    throw error;
-  }
+  const salt = randomBytes(SALT_LENGTH).toString('hex');
+  const hashed = await scryptPromise(string, salt, HASH_LENGTH);
+  return `${salt}${hashed.toString('hex')}`;
 }
 
 module.exports = {

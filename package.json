@@ -1,7 +1,7 @@
 {
   "name": "scryptwrap",
   "description": "A wrapper for the crypto.scrypt()",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": {
     "name": "Peter Dyumin",
@@ -10,8 +10,8 @@
   "homepage": "https://github.com/julyskies/scryptwrap",
   "license": "MIT",
   "engines": {
-    "node": "~14.15.1",
-    "npm": "~6.14.9"
+    "node": "~14.15.4",
+    "npm": "~6.14.10"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,13 @@
     "Scrypt"
   ],
   "scripts": {
+    "lint": "eslint",
     "test": "jest"
   },
   "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "jest": "^26.6.3"
   }
 }

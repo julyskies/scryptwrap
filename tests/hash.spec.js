@@ -14,10 +14,10 @@ describe(
     );
 
     it(
-      'Hash string should be 161 symbols in length',
+      'Hash string should be 160 symbols in length',
       async () => {
         const hashString = await hash(TEST_STRING);
-        expect(hashString.length).toBe(161);
+        expect(hashString.length).toBe(160);
       },
     );
 

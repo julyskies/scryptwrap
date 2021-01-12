@@ -11,7 +11,7 @@ Minimal required Node version is **10.5.0**
 ### Installation
 
 ```shell script
-npm install git+https://github.com/julyskies/scryptwrap
+npm i scryptwrap
 ```
 
 ### Usage

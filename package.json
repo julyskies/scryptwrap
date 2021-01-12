@@ -1,7 +1,7 @@
 {
   "name": "scryptwrap",
   "description": "A wrapper for the crypto.scrypt()",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": {
     "name": "Peter Dyumin",

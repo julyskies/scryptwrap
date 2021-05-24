@@ -1,7 +1,7 @@
 {
   "name": "scryptwrap",
   "description": "A wrapper for the crypto.scrypt()",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "author": {
     "name": "Peter Dyumin",
@@ -10,8 +10,7 @@
   "homepage": "https://github.com/julyskies/scryptwrap",
   "license": "MIT",
   "engines": {
-    "node": "~14.15.4",
-    "npm": "~6.14.10"
+    "node": ">=10.5.0"
   },
   "repository": {
     "type": "git",

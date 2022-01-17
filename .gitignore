@@ -8,4 +8,5 @@ node_modules/
 .npmrc
 
 # Misc
+.DS_Store
 .env

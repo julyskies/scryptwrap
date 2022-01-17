@@ -7,7 +7,6 @@
   "extends": ["airbnb-base"],
   "ignorePatterns": [
     "build",
-    "runtime.js",
     "src/tests"
   ],
   "parser": "@typescript-eslint/parser",

@@ -19,7 +19,7 @@ npm i scryptwrap
 Load the module:
 
 ```javascript
-const { compare, hash } = require('scryptwrap');
+import { compare, hash } from 'scryptwrap';
 ```
 
 Create a hash:
@@ -39,6 +39,17 @@ if (isValid) {
 
 ### Testing
 
+Deploy the project locally:
+
+```shell script
+git clone https://github.com/julyskies/scryptwrap
+cd ./scryptwrap
+nvm use 16
+npm i
+```
+
+Run tests:
+
 ```shell script
 npm run test
 ```
@@ -47,10 +58,14 @@ Tests are done with [Jest](https://jestjs.io)
 
 ### Linting
 
+After deploying the project and installing the modules you can do the linting:
+
 ```shell script
 npm run lint
 ```
 
+Using [ESLint](https://www.npmjs.com/package/eslint)
+
 ### License
 
-[MIT](./LICENSE)
+[MIT](./LICENSE.md)
